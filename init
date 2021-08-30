@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+$root = str_replace('\\', '/', __DIR__);
+$files = getFileList("$root/init-files/");
+
+
+foreach ($files as $file) {
+	@mkdir($root . '/config', 0777, true);
+	file_put_contents($root . '/config/' . $file, file_get_contents($root . '/init-files/' . $file));
+}
+
+
+
+function getFileList($root, $basePath = '') {
+	$files = [];
+	$handle = opendir($root);
+	while (($path = readdir($handle)) !== false) {
+		if ($path === '.git' || $path === '.svn' || $path === '.' || $path === '..') {
+			continue;
+		}
+		$fullPath = "$root/$path";
+		$relativePath = $basePath === '' ? $path : "$basePath/$path";
+		if (is_dir($fullPath)) {
+			$files = array_merge($files, getFileList($fullPath, $relativePath));
+		} else {
+			$files[] = $relativePath;
+		}
+	}
+	closedir($handle);
+	return $files;
+}
