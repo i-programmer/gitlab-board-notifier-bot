@@ -1,3 +1,6 @@
+Небольшое приложение, которое уведомляет о действиях, которые происходят на доске в GitLab. Уведомления могут отсылаться в любой мессенджер. На данные момент реализованы уведомления в бот телеграм.
+
+
 Установка:
 
 - установить webhooks в gitlab
@@ -12,6 +15,8 @@
 
 ---
 
+
+A little app of notifying of operations on GitLab board. Notifications can be send to a any messenger. At the moment notifications to a telegram bot are implemented.
 
 Installing:
 
