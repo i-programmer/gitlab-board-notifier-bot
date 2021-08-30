@@ -16,7 +16,7 @@
 ---
 
 
-A little app of notifying of operations on GitLab board. Notifications can be send to a any messenger. At the moment notifications to a telegram bot are implemented.
+A little app of notifying of operations on a GitLab board. Notifications can be send to any messenger. At the moment notifications to a telegram bot are implemented.
 
 Installing:
 
