@@ -1,3 +1,7 @@
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg)](https://php.net/)
+[![Code Quality](https://img.shields.io/scrutinizer/g/i-programmer/gitlab-board-notifier-bot/master.svg?style=flat)](https://scrutinizer-ci.com/g/i-programmer/gitlab-board-notifier-bot/?branch=master)
+[![Donate](https://img.shields.io/badge/%F0%9F%92%99-Donate-blue)](http://iprogrammer.pro/donate/)
+
 Небольшое приложение, которое уведомляет о действиях, которые происходят на доске в GitLab. Уведомления могут отсылаться в любой мессенджер. На данные момент реализованы уведомления в бот телеграм.
 
 
