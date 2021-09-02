@@ -16,6 +16,7 @@
 
 **NOTICE**: На данный момент сообщения отсылаются от "процессных" столбцов только в случае добавления исполнителя. В ином случае это ведёт к замусориванию сообщениями
 
+**NOTICE 2**: Если в проект надо добавить ещё один процессную колонку или использовать не все, что указаны в текущем коде - необходимо добавить/удалить новый класс  в `/app/process_message/`, а также изменить код менеджера `/app/process_message/ProcessMessageManager::processMessagesMap`
 
 ---
 
@@ -28,7 +29,9 @@ Installing:
 - php init
 - composer install
 - write data into the `config/Config.php`
-- all properties `$labelName` of `ProcessMessage` inheritorы must set the same names as on a board (TODO, CodeReview etc.). For none process labels ("Open", "Reopen", "Close") can be any text. But `formingIsAcceptable` method must be overwritten
+- all properties `$labelName` of `ProcessMessage` inheritors must set the same names as on a board (TODO, CodeReview etc.). For none process labels ("Open", "Reopen", "Close") can be any text. But `formingIsAcceptable` method must be overwritten
 - The format of `assignee` must be as "Name Surname", e.g. "Владимир Петров", "Сергей Волков", "Aleister Black"  or `ProcessMessage::getUserFullNameWithShortedName` method must be rewritten
 
 **NOTICE**: At the moment, messages will be sent from "process" columns only if assignee will be added. Or trash messages will be sent
+
+**NOTICE 2**: if you add another process column in GitLab or do not want to use those processes that specified in the project, than you have to add new/remove class inside `/app/process_message/` folder and change code of manager `/app/process_message/ProcessMessageManager::processMessagesMap`
