@@ -33,7 +33,7 @@ class ActionManager {
 	}
 	
 	public function getProcessMessage(): ProcessMessage {
-		$processMessagesMap = ProcessMessageManager::processMessagesMap();
+		$processMessagesMap = ProcessMessageManager::getProcessMessagesMap();
 
 		$processMessageClassName = [
 			self::ACTION_TYPE_OPEN => $processMessagesMap[OpenProcessMessage::getLabelName()],
@@ -49,7 +49,7 @@ class ActionManager {
 	
 	private function getProcessMessageForUpdateAction(): string {
 		$labelsTitles = $this->issue->getLabelsTitles();
-		$processMessagesMap = ProcessMessageManager::processMessagesMap();
+		$processMessagesMap = ProcessMessageManager::getProcessMessagesMap();
 
 		$currentProcessMessageLabelName = array_values(array_filter($labelsTitles, function($labelTitle) use ($processMessagesMap) {
 			return array_key_exists($labelTitle, $processMessagesMap);
